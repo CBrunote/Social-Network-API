@@ -9,11 +9,7 @@ module.exports = {
     getUsers(req, res) {
         User.find()
             .then(async (users) => {
-                const userObject = {
-                    users,
-                    friendCount: await friendCount(),
-                };
-                return res.json(userObject);
+                return res.json(users);
             })
             .catch((err) => {
                 console.log(err);
@@ -23,14 +19,13 @@ module.exports = {
 
     getSingleUser(req, res) {
         User.findOne({ _id: req.params.userId })
+            .populate('thoughts')
+            .populate('friends')
             .select('-__v')
             .then(async (user) =>
                 !user
                     ? res.status(404).json({ message: 'No user with that ID' })
-                    : res.json({
-                        user,
-                        friendCount: await friendCount(req.params.userId),
-                    })
+                    : res.json(user)
             )
             .catch((err) => {
                 console.log(err);
@@ -104,9 +99,11 @@ module.exports = {
     },
 
     deleteFriend(req, res) {
+        console.log('You are deleting a friend')
+        console.log(req.body);
         User.findOneAndUpdate(
           { _id: req.params.userId },
-          { $pull: { friend: { friend: req.params.friendId } } },
+          { $pull: { friends: req.params.friendId } },
           { runValidators: true, new: true }
         )
           .then((user) =>

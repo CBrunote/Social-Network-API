@@ -14,9 +14,9 @@ router.route('/').get(getAllThoughts).post(createThought)
 
 router.route('/:thoughtId').get(getOneThought).put(updateThought).delete(deleteThought)
 
-router.route('/:thoughtId/reation').put(addReaction)
+router.route('/:thoughtId/reaction').post(addReaction)
 
-router.route('/:thoughtId/reation/:reactionId').put(deleteReaction)
+router.route('/:thoughtId/reaction/:reactionId').delete(deleteReaction)
 
 
 module.exports = router

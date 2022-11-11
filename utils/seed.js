@@ -35,7 +35,7 @@ connection.once('open', async () => {
     const thought = [];
 
     function thoughtData(){
-        for (var i = 0; i < thoughts.length; i++) {
+        for (var i = 0; i < usernames.length; i++) {
             const thoughtObject = {
                 username: usernames[i],
                 thoughtText: thoughts[i]
