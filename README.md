@@ -22,10 +22,6 @@ The purpose of this application is to show an API for a social network platform 
 
 After downlaoding the repository, run npm install in the terminal to ensure the necessary packages are properly installed.
 
-## Screenshots/Visuals
-
-![App Screenshot]()
-
 ## Technology
 
 The technologies used for this application were: JavaScript, Node, Express, MongoDB, and Mongoose.
@@ -48,7 +44,7 @@ No tests are currently available
 
 ## Questions 
 
-If you have any questions please email me at christan.bruno1995@gmail.com
+If you have any questions please email me christian.bruno1995@gmail.com
 
 ## Credits
 
@@ -57,4 +53,4 @@ If you have any questions please email me at christan.bruno1995@gmail.com
 ## Links  
 
 * [Repository](https://github.com/CBrunote/Social-Network-API)
-* [Video](link)
+* [Video](https://drive.google.com/file/d/15c7D0gFI0MRpEWY_XFeCeOgZf_ElSafi/view)
